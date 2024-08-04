@@ -1,0 +1,9 @@
+{
+    "deployment_name": "localhost",
+    "deployment_url": "localhost",
+    "timezone": "UTC",
+    "email_host": "smtp.mailtrap.io",
+    "email_port": "2525",
+    "debug": true,
+    "channel": 1
+}

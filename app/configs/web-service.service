@@ -1,0 +1,21 @@
+[Unit]
+Description=Service file
+Requires=network.target
+After=network.target
+After=syslog.target
+
+[Service]
+TimeoutStartSec=0
+RestartSec=10
+Restart=always
+User=ubuntu
+KillSignal=SIGQUIT
+Type=notify
+NotifyAccess=all
+StandardError=syslog
+WorkingDirectory=/home/ubuntu/himalayan-trail-running-back/app
+Environment=/home/ubuntu/himalayan-trail-running-back/.venv/bin
+ExecStart=/home/ubuntu/himalayan-trail-running-back/.venv/bin/uwsgi --ini /home/ubuntu/himalayan-trail-running-back/app/configs/uwsgi.ini
+
+[Install]
+WantedBy=multi-user.target
